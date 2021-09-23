@@ -22,7 +22,7 @@ function submit() {
       subject:subject,
       message:message
     }
-    // console.log(apikeys.SERVICE_ID,apikeys.TEMPLATE_ID);
+
     emailjs.send(SERVICE_ID,TEMPLATE_ID,params)
     .then(function(res){
       console.log("Status "+res.status);
@@ -31,6 +31,13 @@ function submit() {
       
     })
 
+  document.getElementById("name").value="";
+  document.getElementById("email").value="";
+  document.getElementById("subject").value="";
+  document.getElementById("message").value="";
+
+
+  console.log("clear");
   return true;
 
 
